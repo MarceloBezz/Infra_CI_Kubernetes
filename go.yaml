@@ -19,31 +19,31 @@ spec:
     
       containers: 
        - name: go
-         image: leonardosartorello/go_ci:23 
+         image: marcelobezz07/api-go-dev:28
          ports:
           - containerPort: 8000
          env:
-           - name: HOST
+           - name: DB_HOST
              valueFrom:
               secretKeyRef:
                 name: dbhost
                 key: HOST
-           - name: DBPORT
+           - name: DB_PORT
              valueFrom:
               secretKeyRef:
                 name: dbport
                 key: DBPORT
-           - name: USER
+           - name: DB_USER
              valueFrom:
               secretKeyRef:
                 name: dbuser
                 key: USER
-           - name: PASSWORD
+           - name: DB_PASSWORD
              valueFrom:
               secretKeyRef:
                 name: dbpassword
                 key: PASSWORD
-           - name: DBNAME
+           - name: DB_NAME
              valueFrom:
               secretKeyRef:
                 name: dbname
